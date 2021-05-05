@@ -1,11 +1,11 @@
-import "./App.scss";
-import React, { useState, useEffect } from "react";
-import { Route } from "react-router-dom";
+import './App.scss';
+import React, { useState, useEffect } from 'react';
+import { Route, BrowserRouter } from 'react-router-dom';
 // commenting homepage for temporary purpose
 // import Homepage from "./components/homePage/homePage.component";
-import SearchPage from "./pages/searchPage/searchPage.component";
-import DetailsPage from "./pages/detailsPage/detailsPage.component";
-import LocationList from "./pages/locationList/locationList.component";
+import SearchPage from './pages/searchPage/searchPage.component';
+import DetailsPage from './pages/detailsPage/detailsPage.component';
+import LocationList from './pages/locationList/locationList.component';
 
 // component
 // import Header from "../src/common/header/header.component";
@@ -26,32 +26,38 @@ const App = () => {
     setLongitude(position.coords.longitude);
   };
   return (
-    <div className="grid-container">
-      {/* Hidded header for time being as we are integrating with wix */}
-      {/* <Header /> */}
-      <main>
-        {/* <Route exact path="/" render={(props) => <Homepage {...props} />} /> */}
-        <Route
-          exact
-          path="/"
-          render={(props) => (
-            <SearchPage {...props} latitude={latitude} longitude={longitude} />
-          )}
-        />
-        <Route
-          exact
-          path="/details"
-          render={(props) => <DetailsPage {...props} />}
-        />
-        <Route
-          exact
-          path="/location-list"
-          render={(props) => <LocationList {...props} />}
-        />
-      </main>
-      {/* Hidded footer for time being as we are integrating with wix */}
-      {/* <Footer /> */}
-    </div>
+    <BrowserRouter>
+      <div className="grid-container">
+        {/* Hidded header for time being as we are integrating with wix */}
+        {/* <Header /> */}
+        <main>
+          {/* <Route exact path="/" render={(props) => <Homepage {...props} />} /> */}
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <SearchPage
+                {...props}
+                latitude={latitude}
+                longitude={longitude}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/details"
+            render={(props) => <DetailsPage {...props} />}
+          />
+          <Route
+            exact
+            path="/location-list"
+            render={(props) => <LocationList {...props} />}
+          />
+        </main>
+        {/* Hidded footer for time being as we are integrating with wix */}
+        {/* <Footer /> */}
+      </div>
+    </BrowserRouter>
   );
 };
 

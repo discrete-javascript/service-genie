@@ -4,6 +4,9 @@
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@craco/craco": "^6.1.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -35,7 +38,7 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "publish:npm": "rm -rf dist && mkdir dist &&  babel src/components -d dist --copy-files"
+    "publish:npm": "npm run build"
   },
   "eslintConfig": {
     "extends": [
