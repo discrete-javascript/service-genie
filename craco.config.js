@@ -2,7 +2,7 @@ module.exports = {
   webpack: {
     configure: {
       output: {
-        filename: 'static/js/bundle.js',
+        filename: 'dist/index.js',
       },
       optimization: {
         runtimeChunk: false,

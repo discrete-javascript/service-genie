@@ -1,6 +1,9 @@
 {
-  "name": "@service-genie/search",
+  "name": "@service-genie-wix/search",
   "version": "1.0.2",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "dependencies": {
     "@craco/craco": "^6.1.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -38,11 +41,6 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-react"
     ]
   },
   "browserslist": {
